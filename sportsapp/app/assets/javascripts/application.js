@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require_tree .
 
-<<<<<<< HEAD
 
 
 // Map Tabs
