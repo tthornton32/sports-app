@@ -15,3 +15,28 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+
+
+// Map Tabs
+$( document ).ready(function(){ 
+
+
+$('.tabgroupgm > div').hide();
+$('.tabgroupgm > div:first-of-type').show();
+$('.tabs a').click(function(e){
+  e.preventDefault();
+    var $this = $(this),
+        tabgroupgm = '#'+$this.parents('.tabs').data('tabgroupgm'),
+        others = $this.closest('li').siblings().children('a'),
+        target = $this.attr('href');
+    others.removeClass('active');
+    $this.addClass('active');
+    $(tabgroupgm).children('div').hide();
+    $(target).show();
+  
+})
+
+});
+    
+
