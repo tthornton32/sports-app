@@ -1,0 +1,396 @@
+Last login: Tue Jul 29 21:48:44 on ttys000
+NTnbrown:sportsapp apple$ ls
+Gemfile		Rakefile	config		lib		test
+Gemfile.lock	app		config.ru	log		tmp
+README.rdoc	bin		db		public		vendor
+NTnbrown:sportsapp apple$ rake routes
+                  Prefix Verb   URI Pattern                            Controller#Action
+        new_user_session GET    /users/sign_in(.:format)               devise/sessions#new
+            user_session POST   /users/sign_in(.:format)               devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)              devise/sessions#destroy
+           user_password POST   /users/password(.:format)              devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)          devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)         devise/passwords#edit
+                         PATCH  /users/password(.:format)              devise/passwords#update
+                         PUT    /users/password(.:format)              devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)                devise/registrations#cancel
+       user_registration POST   /users(.:format)                       devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)               devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)                  devise/registrations#edit
+                         PATCH  /users(.:format)                       devise/registrations#update
+                         PUT    /users(.:format)                       devise/registrations#update
+                         DELETE /users(.:format)                       devise/registrations#destroy
+           user_comments POST   /users/:user_id/comments(.:format)     comments#create
+            user_comment DELETE /users/:user_id/comments/:id(.:format) comments#destroy
+                   users GET    /users(.:format)                       users#index
+                         POST   /users(.:format)                       users#create
+                new_user GET    /users/new(.:format)                   users#new
+               edit_user GET    /users/:id/edit(.:format)              users#edit
+                    user GET    /users/:id(.:format)                   users#show
+                         PATCH  /users/:id(.:format)                   users#update
+                         PUT    /users/:id(.:format)                   users#update
+                         DELETE /users/:id(.:format)                   users#destroy
+                    root GET    /                                      home#index
+NTnbrown:sportsapp apple$ ls
+Gemfile		Rakefile	config		lib		test
+Gemfile.lock	app		config.ru	log		tmp
+README.rdoc	bin		db		public		vendor
+NTnbrown:sportsapp apple$ cd ..
+NTnbrown:sportsapp apple$ ls
+README.md	RESOURCES.md	sportsapp	sportsapp.zip
+NTnbrown:sportsapp apple$ git pull origin master
+remote: Counting objects: 14, done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 14 (delta 3), reused 9 (delta 1)
+Unpacking objects: 100% (14/14), done.
+From github.com:tthornton32/sports-app
+ * branch            master     -> FETCH_HEAD
+   6c45bcd..18b1422  master     -> origin/master
+Updating 6c45bcd..18b1422
+error: Your local changes to the following files would be overwritten by merge:
+	.DS_Store
+Please, commit your changes or stash them before you can merge.
+Aborting
+NTnbrown:sportsapp apple$ git branch
+* juvia
+  master
+NTnbrown:sportsapp apple$ git checkout master
+M	.DS_Store
+M	RESOURCES.md
+M	sportsapp/.DS_Store
+M	sportsapp/Gemfile
+M	sportsapp/Gemfile.lock
+M	sportsapp/app/controllers/application_controller.rb
+M	sportsapp/app/controllers/users_controller.rb
+M	sportsapp/app/models/user.rb
+M	sportsapp/app/views/users/show.html.erb
+M	sportsapp/config/routes.rb
+M	sportsapp/db/schema.rb
+Switched to branch 'master'
+NTnbrown:sportsapp apple$ git merge juvia
+Already up-to-date.
+NTnbrown:sportsapp apple$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .DS_Store
+	modified:   RESOURCES.md
+	modified:   sportsapp/.DS_Store
+	modified:   sportsapp/Gemfile
+	modified:   sportsapp/Gemfile.lock
+	modified:   sportsapp/app/controllers/application_controller.rb
+	modified:   sportsapp/app/controllers/users_controller.rb
+	modified:   sportsapp/app/models/user.rb
+	modified:   sportsapp/app/views/users/show.html.erb
+	modified:   sportsapp/config/routes.rb
+	modified:   sportsapp/db/schema.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	sportsapp.zip
+	sportsapp/app/.DS_Store
+	sportsapp/app/assets/javascripts/comments.js.coffee
+	sportsapp/app/assets/stylesheets/comments.css.scss
+	sportsapp/app/controllers/comments_controller.rb
+	sportsapp/app/helpers/comments_helper.rb
+	sportsapp/app/models/comment.rb
+	sportsapp/app/views/comments/
+	sportsapp/db/migrate/20140729180409_acts_as_commentable_with_threading_migration.rb
+	sportsapp/test/controllers/comments_controller_test.rb
+	sportsapp/test/helpers/comments_helper_test.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+NTnbrown:sportsapp apple$ git pull origin master
+From github.com:tthornton32/sports-app
+ * branch            master     -> FETCH_HEAD
+Updating 6c45bcd..18b1422
+error: Your local changes to the following files would be overwritten by merge:
+	.DS_Store
+Please, commit your changes or stash them before you can merge.
+Aborting
+NTnbrown:sportsapp apple$ git fetch --all
+Fetching origin
+From github.com:tthornton32/sports-app
+ * [new branch]      pax        -> origin/pax
+NTnbrown:sportsapp apple$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .DS_Store
+	modified:   RESOURCES.md
+	modified:   sportsapp/.DS_Store
+	modified:   sportsapp/Gemfile
+	modified:   sportsapp/Gemfile.lock
+	modified:   sportsapp/app/controllers/application_controller.rb
+	modified:   sportsapp/app/controllers/users_controller.rb
+	modified:   sportsapp/app/models/user.rb
+	modified:   sportsapp/app/views/users/show.html.erb
+	modified:   sportsapp/config/routes.rb
+	modified:   sportsapp/db/schema.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	sportsapp.zip
+	sportsapp/app/.DS_Store
+	sportsapp/app/assets/javascripts/comments.js.coffee
+	sportsapp/app/assets/stylesheets/comments.css.scss
+	sportsapp/app/controllers/comments_controller.rb
+	sportsapp/app/helpers/comments_helper.rb
+	sportsapp/app/models/comment.rb
+	sportsapp/app/views/comments/
+	sportsapp/db/migrate/20140729180409_acts_as_commentable_with_threading_migration.rb
+	sportsapp/test/controllers/comments_controller_test.rb
+	sportsapp/test/helpers/comments_helper_test.rb
+
+no changes added to commit (use "git add" and/or "git commit -a")
+NTnbrown:sportsapp apple$ git add .
+NTnbrown:sportsapp apple$ git commit -m 'inital comments commit'
+[master 726786c] inital comments commit
+ 23 files changed, 223 insertions(+), 4 deletions(-)
+ create mode 100644 sportsapp.zip
+ create mode 100644 sportsapp/app/.DS_Store
+ create mode 100644 sportsapp/app/assets/javascripts/comments.js.coffee
+ create mode 100644 sportsapp/app/assets/stylesheets/comments.css.scss
+ create mode 100644 sportsapp/app/controllers/comments_controller.rb
+ create mode 100644 sportsapp/app/helpers/comments_helper.rb
+ create mode 100644 sportsapp/app/models/comment.rb
+ create mode 100644 sportsapp/app/views/comments/_comment.html.erb
+ create mode 100644 sportsapp/app/views/comments/_form.html.erb
+ create mode 100644 sportsapp/db/migrate/20140729180409_acts_as_commentable_with_threading_migration.rb
+ create mode 100644 sportsapp/test/controllers/comments_controller_test.rb
+ create mode 100644 sportsapp/test/helpers/comments_helper_test.rb
+NTnbrown:sportsapp apple$ git push origin master
+To git@github.com:tthornton32/sports-app.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:tthornton32/sports-app.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+NTnbrown:sportsapp apple$ git pull origin master
+From github.com:tthornton32/sports-app
+ * branch            master     -> FETCH_HEAD
+warning: Cannot merge binary files: .DS_Store (HEAD vs. 18b142262e536c69e260c18613c83dca5bd5ace0)
+Auto-merging .DS_Store
+CONFLICT (content): Merge conflict in .DS_Store
+Automatic merge failed; fix conflicts and then commit the result.
+NTnbrown:sportsapp apple$ ls -al
+total 1688
+drwxr-xr-x  10 apple  staff     340 Jul 29 22:20 .
+drwxr-xr-x  12 apple  staff     408 Jul 29 21:49 ..
+-rw-r--r--   1 apple  staff    6148 Jul 29 22:20 .DS_Store
+drwxr-xr-x  18 apple  staff     612 Jul 29 22:20 .git
+-rw-r--r--   1 apple  staff    1408 Jul 29 10:44 README.md
+-rw-r--r--   1 apple  staff     848 Jul 29 16:11 RESOURCES.md
+drwxr-xr-x   2 apple  staff      68 Jul 29 22:20 maps
+drwxr-xr-x   4 apple  staff     136 Jul 29 22:20 maps1
+drwxr-xr-x  19 apple  staff     646 Jul 29 12:24 sportsapp
+-rw-r--r--   1 apple  staff  843994 Jul 29 14:02 sportsapp.zip
+NTnbrown:sportsapp apple$ rm DS_Store
+rm: DS_Store: No such file or directory
+NTnbrown:sportsapp apple$ rm .DS_Store
+NTnbrown:sportsapp apple$ git push origin master
+To git@github.com:tthornton32/sports-app.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:tthornton32/sports-app.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+NTnbrown:sportsapp apple$ git pull origin master
+U	.DS_Store
+A	maps1/main.css
+A	maps1/map_practice.html
+Pull is not possible because you have unmerged files.
+Please, fix them up in the work tree, and then use 'git add/rm <file>'
+as appropriate to mark resolution, or use 'git commit -a'.
+NTnbrown:sportsapp apple$ git fetch --all
+Fetching origin
+NTnbrown:sportsapp apple$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Changes to be committed:
+
+	new file:   maps
+	new file:   maps1/main.css
+	new file:   maps1/map_practice.html
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:      .DS_Store
+
+NTnbrown:sportsapp apple$ git add .
+fatal: unable to stat '.DS_Store': No such file or directory
+NTnbrown:sportsapp apple$ git pull
+U	.DS_Store
+A	maps1/main.css
+A	maps1/map_practice.html
+Pull is not possible because you have unmerged files.
+Please, fix them up in the work tree, and then use 'git add/rm <file>'
+as appropriate to mark resolution, or use 'git commit -a'.
+NTnbrown:sportsapp apple$ git reset --hard origin/master
+HEAD is now at 18b1422 Update map_practice.html
+NTnbrown:sportsapp apple$ git status
+On branch master
+nothing to commit, working directory clean
+NTnbrown:sportsapp apple$ git fetch --all
+Fetching origin
+NTnbrown:sportsapp apple$ ls
+README.md	RESOURCES.md	maps		maps1		sportsapp
+NTnbrown:sportsapp apple$ git status
+On branch master
+nothing to commit, working directory clean
+NTnbrown:sportsapp apple$ git add .
+NTnbrown:sportsapp apple$ git status
+On branch master
+nothing to commit, working directory clean
+NTnbrown:sportsapp apple$ git push origin master
+Everything up-to-date
+NTnbrown:sportsapp apple$ git history
+git: 'history' is not a git command. See 'git --help'.
+NTnbrown:sportsapp apple$ git help
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty Git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+NTnbrown:sportsapp apple$ git log
+commit 18b142262e536c69e260c18613c83dca5bd5ace0
+Author: Pascal Cruz <pascalcruz13@gmail.com>
+Date:   Tue Jul 29 16:59:22 2014 -0400
+
+    Update map_practice.html
+    
+    Deleted key
+
+commit 61f91ec5816d1e77965efab0cfbebbdb8711cb86
+Author: Thomas Thornton <thomas.thornton@stonybrook.edu>
+Date:   Tue Jul 29 16:21:54 2014 -0400
+
+    same as before
+
+commit 77d8f598b9ae15ecf9bd93ee53b9ce42e9b5a962
+Merge: 6032548 6c45bcd
+Author: Thomas Thornton <thomas.thornton@stonybrook.edu>
+Date:   Tue Jul 29 16:14:10 2014 -0400
+
+    Merge branch 'master' of https://github.com/tthornton32/sports-app
+    Maps
+
+commit 6032548206417866336a1760a3d21b3128db2e8f
+Author: Thomas Thornton <thomas.thornton@stonybrook.edu>
+Date:   Tue Jul 29 16:13:44 2014 -0400
+
+    Draggable markers and info windows working, search bar code is there but not working
+
+commit 6c45bcd8bf1b6d7a3f30df940851cd2405d2bea5
+Author: Matt Day <mday100@live.com>
+Date:   Tue Jul 29 12:27:08 2014 -0400
+
+    added resources file and admin to user model
+
+commit 8ec2d7a926adadd9f65fdf2effa99de5bf1419a3
+Author: Pascal Cruz <pascalcruz13@gmail.com>
+Date:   Tue Jul 29 11:11:54 2014 -0400
+
+    Added bootstrap files
+
+commit 6cc271afc641c3964e550b11f5b0651542215da0
+Author: Pascal Cruz <pascalcruz13@gmail.com>
+Date:   Tue Jul 29 10:54:37 2014 -0400
+
+    addedbootstrap gems
+
+commit 3fdae21f7f1d3a3e677cf0c47350f96ece2c8226
+Merge: 0dd6f1a 5f5306d
+Author: Matt Day <mday100@live.com>
+Date:   Tue Jul 29 10:46:52 2014 -0400
+
+    initial commit with users
+
+commit 0dd6f1a970c4fedd06638f72466b2a1f386280ff
+Author: Matt Day <mday100@live.com>
+Date:   Tue Jul 29 10:40:02 2014 -0400
+
+    initial commit with users
+
+commit 5f5306d415709115ad62631217f13d6f332b81a9
+Author: tthornton32 <thomas.thornton@stonybrook.edu>
+Date:   Tue Jul 29 10:33:08 2014 -0400
+
+    Initial commit
+NTnbrown:sportsapp apple$ 
+NTnbrown:sportsapp apple$ ls
+README.md	RESOURCES.md	maps		maps1		sportsapp
+NTnbrown:sportsapp apple$ git add .
+NTnbrown:sportsapp apple$ git commit -m 'initial comments commit'
+[master c6300d7] initial comments commit
+ 1 file changed, 26 insertions(+)
+ create mode 100644 sportsapp/app/controllers/comments_controller.rb
+NTnbrown:sportsapp apple$ git status
+On branch master
+nothing to commit, working directory clean
+NTnbrown:sportsapp apple$ git push origin master
+Counting objects: 13, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 859 bytes | 0 bytes/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+To git@github.com:tthornton32/sports-app.git
+   18b1422..c6300d7  master -> master
+NTnbrown:sportsapp apple$ git status
+On branch master
+nothing to commit, working directory clean
+NTnbrown:sportsapp apple$ git checkout
+NTnbrown:sportsapp apple$ git branch
+  juvia
+* master
+NTnbrown:sportsapp apple$ git checkout juvia
+Switched to branch 'juvia'
+NTnbrown:sportsapp apple$ git checkout master
+Switched to branch 'master'
+NTnbrown:sportsapp apple$ git merge juvia
+Already up-to-date.
+NTnbrown:sportsapp apple$ git fsck
+Checking object directories: 100% (256/256), done.
+dangling blob 81aa98a9cd2f834ac050ad1e8ea652dd88fb3352
+NTnbrown:sportsapp apple$ git status
+On branch master
+nothing to commit, working directory clean
+NTnbrown:sportsapp apple$ 

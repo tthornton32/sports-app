@@ -5,7 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:username]
 
-         acts_as_commentable
+  validates :cellphone,
+      format: { with: /[\(\)0-9\- \+\.]{10,20} *[extension\.]{0,9} *[0-9]{0,5}/,
+      message: "Must be a valid telephone number!" }
+
+  acts_as_commentable
 
 has_many :comments,    :dependent => :destroy
 
