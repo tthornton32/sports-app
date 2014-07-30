@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:username]
 
+         acts_as_commentable
+
+has_many :comments,    :dependent => :destroy
+
 	attr_accessor :login
 
 	# validates :username,

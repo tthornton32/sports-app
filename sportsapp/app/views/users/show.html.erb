@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<h1>User Name</h1>
+<%= @user.username %>
+<h2>Comments</h2>
+<%= render :partial => 'comments/form', :locals => { :comment => @new_comment } %>
+<%= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

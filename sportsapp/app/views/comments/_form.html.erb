@@ -1,0 +1,10 @@
+<%= form_for [@commenter, @new_comment], :remote => true do |f| %>
+
+  <div><%= f.label :body %><br />
+  <%= f.text_area :body, autofocus: true %></div>
+
+  <%= f.hidden_field :commentable_id %>
+ <%= f.hidden_field :commentable_type %>
+
+  <div><%= f.submit :class => "btn btn-primary", :disable_with => "Submitting" %></div>
+<% end %>
