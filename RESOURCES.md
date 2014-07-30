@@ -9,3 +9,12 @@ https://github.com/plataformatec/devise
 
 <h3><u>Devise adding an admin role</u></h3>
 <li>https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-role#option-2---adding-an-admin-attribute</li>
+
+<h3><u>Devise updating signin and signup paths</u></h3>
+<li>https://github.com/nycda-staff/cards</li>
+
+## Acts As Commentable
+https://github.com/elight/acts_as_commentable_with_threading
+
+<h3><u>Acts As Commentable Where to start?</u></h3>
+<li>http://twocentstudios.com/blog/2012/11/15/simple-ajax-comments-with-rails/</li>
