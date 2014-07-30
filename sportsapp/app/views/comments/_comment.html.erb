@@ -1,13 +1,9 @@
-<%= form_for [@commenter, @new_comment], :remote => true do |f| %>
-
-<div><%= "comment-#{comment.id}" %></div>
-
 <hr>
 
-<%= link_to "x", @comment, :method => :delete, :remote => true, :confirm => "Are you sure you want to remove this comment?", :disable_with => "x", :class => 'close' %>
+<div class="comment">
+<%= link_to "x", user_comment_path(current_user, comment), :method => :delete, :remote => true, :confirm => "Are you sure you want to remove this comment?", data: {disable_with: "x"}, :class => 'close' %>
+</div>
 
 <h4><%= comment.user.username %></h4>
-	<%= comment.updated_at %>
-<p><%= comment.body %></p>
-
-<% end %>
+<p>	<%= comment.body %> </p>
+<p> <%= comment.updated_at %> </p>
