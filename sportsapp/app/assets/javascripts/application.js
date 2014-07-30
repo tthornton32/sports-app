@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
+<<<<<<< HEAD
 
 
 // Map Tabs
@@ -40,3 +41,23 @@ $('.tabs a').click(function(e){
 });
     
 
+=======
+$(document).on('ready page:load', function () {
+
+	$(document).on('ajax:success', function(e) {
+    window.location.reload(true);
+	}
+	// 	$(e.currentTarget).closest('.card').fadeOut();
+	// });
+	// $(".dismiss").on("click", function (event) {
+	//     $(event.target).closest('p').slideUp();
+	// });
+	// $( "#board" ).sortable({
+	// 	appendTo: $( '#board' ),
+	// 	update: function() {
+	// 		$.post($(this).data('update-url'),
+	// 		$(this).sortable('serialize'));
+	// 	}
+	// });
+});
+>>>>>>> b403329b9873bfde1da336d5f9c91b55129130a3

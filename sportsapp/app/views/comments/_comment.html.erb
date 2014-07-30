@@ -1,0 +1,9 @@
+<hr>
+
+<div class="comment">
+<%= link_to "x", user_comment_path(current_user, comment), :method => :delete, :remote => true, :confirm => "Are you sure you want to remove this comment?", data: {disable_with: "x"}, :class => 'close' %>
+</div>
+
+<h4><%= comment.user.username %></h4>
+<p>	<%= comment.body %> </p>
+<p> <%= comment.updated_at %> </p>
