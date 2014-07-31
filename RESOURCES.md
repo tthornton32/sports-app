@@ -2,6 +2,7 @@
 
 ## Devise
 https://github.com/plataformatec/devise
+http://railscasts.com/episodes/209-introducing-devise
 
 <h3><u>Devise with username and cell phone resources</u></h3>
 <li>http://rubyonrailshelp.wordpress.com/2014/01/03/creating-user-and-admin-model-using-devise-rails/</li>
@@ -18,3 +19,5 @@ https://github.com/elight/acts_as_commentable_with_threading
 
 <h3><u>Acts As Commentable Where to start?</u></h3>
 <li>http://twocentstudios.com/blog/2012/11/15/simple-ajax-comments-with-rails/</li>
+
+A polymorphic association allows a model to belong_to different types of other models. Here I show how to make a single comment model belong to articles, photos, and events.

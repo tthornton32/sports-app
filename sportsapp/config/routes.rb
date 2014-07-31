@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users do
+    get '/home' => 'users#home'
     resources :comments, :only => [:create, :destroy]
   end
   

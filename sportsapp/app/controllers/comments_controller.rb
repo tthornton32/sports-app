@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 	    respond_to do |format|
 		    if @comment.destroy
 		    	format.js {}
-		    	format.json { render :json => @comment, :status => :ok }
+		    	# format.json { render :json => @comment, :status => :ok }
 		    else
 		        render :js => "alert('error deleting comment');"
 		    end
