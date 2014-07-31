@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :games
+
   devise_for :users
   resources :users do
     resources :comments, :only => [:create, :destroy]
