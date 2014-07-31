@@ -1,4 +1,4 @@
-A website designed to give you opportunities to play your favorite sports competitively or recreationally.
+A web app designed to give you opportunities to play your favorite sports competitively or recreationally.
 
 ## Synopsis
 
