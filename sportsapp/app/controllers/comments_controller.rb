@@ -1,13 +1,14 @@
 class CommentsController < ApplicationController
 
 	def create
-		@comment_hash = params[:comment]
-	    @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
+		# @comment_hash = params[:comment]
+	    # @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
 	    # Not implemented: check to see whether the user has permission to create a comment on this object
-	    @comment = Comment.build_from(@obj, current_user.id, @comment_hash[:body])
+	    @comment = Comment.new(comment_params)
+	    @comment.parent_id = current_user.id
 	    respond_to do |format|
 		    if @comment.save
-		    	format.js {}
+		    	format.js
 		        # render :partial => "comments/comment", :locals => { :comment => @comment }, :layout => false, :status => :created
 		    else
 		       	render :js => "alert('error saving comment');"
@@ -25,6 +26,12 @@ class CommentsController < ApplicationController
 		        render :js => "alert('error deleting comment');"
 		    end
 		end
+	end
+
+	private
+
+	def comment_params
+		params.require(:comment).permit(:commentable_type, :commentable_id, :body, :user_id, :title, :subject)
 	end
 
 end

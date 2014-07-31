@@ -1,5 +1,7 @@
 class Comment < ActiveRecord::Base
-  acts_as_nested_set :scope => [:commentable_id, :commentable_type]
+  
+
+  # acts_as_nested_set :scope => [:commentable_id, :commentable_type]
 
   validates :body, :presence => true
   validates :user, :presence => true
@@ -46,5 +48,9 @@ class Comment < ActiveRecord::Base
   # given the commentable class name and id
   def self.find_commentable(commentable_str, commentable_id)
     commentable_str.constantize.find(commentable_id)
+  end
+
+  def commenter
+    User.find(self.parent_id)
   end
 end

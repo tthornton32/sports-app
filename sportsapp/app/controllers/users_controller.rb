@@ -10,11 +10,14 @@ class UsersController < ApplicationController
   def home
   end
 
+  def comment
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show
-    @comments = @user.comment_threads.order('created_at desc')
-    @new_comment = Comment.build_from(@user, current_user.id, "")
+    @comments = @user.comments.order('created_at desc')
+    @new_comment = Comment.new(user_id: @user.id)
     @commenter = current_user
   end
 

@@ -21,3 +21,10 @@ https://github.com/elight/acts_as_commentable_with_threading
 <li>http://twocentstudios.com/blog/2012/11/15/simple-ajax-comments-with-rails/</li>
 
 A polymorphic association allows a model to belong_to different types of other models. Here I show how to make a single comment model belong to articles, photos, and events.
+
+## Twilio
+https://www.twilio.com
+https://github.com/twilio/twilio-ruby
+
+<h3><u>Integrating Twilio With Your Rails 4 App</u></h3>
+https://www.twilio.com/blog/2014/02/twilio-on-rails-integrating-twilio-with-your-rails-4-app.html
