@@ -9,6 +9,7 @@ class GamesController < ApplicationController
       marker.lat game.latitude
       marker.lng game.longitude
       marker.infowindow game.description
+      
     end
   end
 

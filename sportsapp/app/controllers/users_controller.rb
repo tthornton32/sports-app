@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authorized?, only: [:index]
   # GET /users
   # GET /users.json
   def index
@@ -79,5 +79,12 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params[:user]
+    end
+
+    def authorized?
+      unless current_user.admin == true
+        flash[:error] = "You are not authorized to view that page."
+        redirect_to root_path
+      end
     end
 end
