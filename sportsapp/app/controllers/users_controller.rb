@@ -20,11 +20,11 @@ class UsersController < ApplicationController
     @new_comment = Comment.new(user_id: @user.id)
     @commenter = current_user
 
-     @games = Game.all
+   @games = Game.all
     @hash = Gmaps4rails.build_markers(@games) do |game, marker|
       marker.lat game.latitude
       marker.lng game.longitude
-      marker.infowindow game.description
+      marker.infowindow render_to_string(:partial => "layouts/window", :locals => { :object => game})
     end
   end
 
@@ -84,9 +84,9 @@ class UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params[:user]
-    end
+  def user_params
+    params.require(:user).permit(:cellphone)
+  end
 
     def authorized?
       unless current_user.admin == true

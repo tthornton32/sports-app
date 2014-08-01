@@ -1,0 +1,13 @@
+
+    <% @games = Game.all %> 
+    <% @hash = Gmaps4rails.build_markers(@games) do |game, marker| %>
+      
+       
+     <b>Title:</b> <%= marker.infowindow game.title %> <br><br>
+      <b>Address:</b><%= marker.infowindow game.address %><br><br>
+      <b>Skill Level:</b><%= marker.infowindow game.skill_level %><br><br>
+      <b>Description:</b><%= marker.infowindow game.description %> 
+
+
+
+<% end %> 

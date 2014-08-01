@@ -18,14 +18,12 @@ class CommentsController < ApplicationController
 
 	def destroy
 	    @comment = Comment.find(params[:id])
-	    respond_to do |format|
+	    # respond_to do |format|
 		    if @comment.destroy
-		    	format.js {}
+		    	# format.js {}
 		    	# format.json { render :json => @comment, :status => :ok }
-		    else
-		        render :js => "alert('error deleting comment');"
+		    	redirect_to user_path(current_user)
 		    end
-		end
 	end
 
 	private

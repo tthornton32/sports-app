@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :users do
     get '/home' => 'users#home'
     get '/comments' => 'users#comment'
+    get 'messages/new'
+    post 'messages' => 'messages#create'
     resources :comments, :only => [:create, :destroy]
   end
   
