@@ -8,7 +8,7 @@ class GamesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@games) do |game, marker|
       marker.lat game.latitude
       marker.lng game.longitude
-      marker.infowindow game.description
+      marker.infowindow render_to_string(:partial => "layouts/window", :locals => { :object => game})
       
     end
   end
