@@ -9,11 +9,16 @@ class User < ActiveRecord::Base
       format: { with: /[\(\)0-9\- \+\.]{10,20} *[extension\.]{0,9} *[0-9]{0,5}/,
       message: "Must be a valid telephone number!" }
 
+  validates_presence_of :cellphone
+  validates_uniqueness_of :cellphone
+
   acts_as_commentable
 
 has_many :comments,    :dependent => :destroy
 
 	attr_accessor :login
+
+  require 'twilio-ruby'
 
 	# validates :username,
  #  :uniqueness => {
@@ -28,5 +33,17 @@ has_many :comments,    :dependent => :destroy
         where(conditions).first
       end
   end
+
+    def send_sms(message)
+      account_sid = ENV['DTP_TWILIO_SID']
+      auth_token = ENV['DTP_TWILIO_TOKEN']
+      @client = Twilio::REST::Client.new account_sid, auth_token
+
+      message = @client.account.messages.create({
+        :body => message,
+        :to => cellphone,
+        :from => '+19545058091',})
+      puts message.to
+    end
 
 end

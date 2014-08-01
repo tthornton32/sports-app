@@ -24,7 +24,10 @@ A polymorphic association allows a model to belong_to different types of other m
 
 ## Twilio
 https://www.twilio.com
-https://github.com/twilio/twilio-ruby
+https://github.com/Fountain/Pizza-Alert-3000
 
 <h3><u>Integrating Twilio With Your Rails 4 App</u></h3>
 https://www.twilio.com/blog/2014/02/twilio-on-rails-integrating-twilio-with-your-rails-4-app.html
+
+<h3><u>Twilio SMS and MMS SMS Quickstart</u></h3>
+https://www.twilio.com/docs/quickstart/ruby/sms/sending-via-rest
