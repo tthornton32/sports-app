@@ -1,8 +1,10 @@
+<div class='center'>
+
 <h2>Sign in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<div>
+
     <%= f.text_field :username, autofocus: true, placeholder: 'Username' %> <br>
    	<%= f.password_field :password, autocomplete: "off" , placeholder: 'Password' %> <br>
   
@@ -11,8 +13,9 @@
   	<% end -%>
 
  	 <%= f.submit "Sign in" %>
+ 	 <%= render "devise/shared/links" %>
 </div>
 
 <% end %>
 
-<%= render "devise/shared/links" %>
+
