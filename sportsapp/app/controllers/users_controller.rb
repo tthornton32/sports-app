@@ -19,6 +19,13 @@ class UsersController < ApplicationController
     @comments = @user.comments.order('created_at desc')
     @new_comment = Comment.new(user_id: @user.id)
     @commenter = current_user
+
+     @games = Game.all
+    @hash = Gmaps4rails.build_markers(@games) do |game, marker|
+      marker.lat game.latitude
+      marker.lng game.longitude
+      marker.infowindow game.description
+    end
   end
 
   # GET /users/new
