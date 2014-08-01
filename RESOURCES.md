@@ -31,3 +31,6 @@ https://www.twilio.com/blog/2014/02/twilio-on-rails-integrating-twilio-with-your
 
 <h3><u>Twilio SMS and MMS SMS Quickstart</u></h3>
 https://www.twilio.com/docs/quickstart/ruby/sms/sending-via-rest
+
+<h3><u>Google maps api integrations with google-maps-for-rails gem</u></h3>
+https://github.com/apneadiving/Google-Maps-for-Rails
